@@ -1,0 +1,26 @@
+# version: "3.9"
+
+# services:
+#   app:
+#     build:
+#       context: .
+#       dockerfile: ./Dockerfile
+#     command: >
+#         sh -c "python manage.py collectstatic --noinput --dry-run &&
+#           python manage.py makemigrations &&
+#           python manage.py migrate &&
+#           gunicorn --chdir /app imod_api.wsgi:application --bind 0.0.0.0:8000"
+
+#     ports:
+#       - "8000:8000"
+#     restart: always
+#     env_file: 
+#       - .env
+#     logging:
+#       driver: "json-file"
+#       options:
+#         max-size: "500k"
+#         max-file: "20"
+#     volumes:
+#       - ./imod_api/database:/app/database  # Mount database folder to persist data
+#       - ./staticfiles:/app/staticfiles

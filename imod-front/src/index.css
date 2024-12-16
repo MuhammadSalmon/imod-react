@@ -1,0 +1,122 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; Prevent scrollbars */
+  height: 100%;
+}
+
+canvas {
+  display: block; /* Ensure no extra margins for the canvas */
+}
+
+.main_color{
+    color: #124a79;
+}
+
+  .hero-container {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .parallax {
+    /* Parallax background effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 700px; /* Adjust height as needed */
+  }
+.loader {
+  border: 8px solid #f3f3f3; /* Light gray */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px; /* Size of the spinner */
+  height: 50px; /* Size of the spinner */
+  animation: spin 1s linear infinite;
+  display: block; /* Ensure it's treated as a block element */
+  margin: 0 auto; /* Center the spinner */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.carousel-slide {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.carousel-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel-button {
+  margin-top: 10px;
+}
+
+
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.slide-content h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.slide-content p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.slide-content button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Ensures HeroSection covers the full viewport height */
+.hero-section-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Sticky effect */
+.slider-slide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

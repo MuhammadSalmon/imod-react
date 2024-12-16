@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  frontend:
+    build:
+      context: ./imod-frnt
+    ports:
+      - "3000:80"
+
+backend:
+    build:
+      context: ./imod_api
+    volumes:
+      - ./imod_api:/app
+    ports:
+      - "8000:8000"
+
+
+nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - imod-front
+      - imod_api
