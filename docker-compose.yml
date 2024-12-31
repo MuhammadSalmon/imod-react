@@ -1,27 +1,43 @@
-version: '3.9'
+version: '3.8'
 
 services:
-  frontend:
+  backend:
     build:
-      context: ./imod-frnt
-    ports:
-      - "3000:80"
-
-backend:
-    build:
-      context: ./imod_api
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: django-backend
+    healthcheck:
+    test: ["CMD", "curl", "-f", "http://localhost:8000/health/"]
+    interval: 10s
+    retries: 3
     volumes:
-      - ./imod_api:/app
+      - ./backend:/app
+      - ./backend/db.sqlite3:/app/db.sqlite3  # Persist SQLite database
+      - ./backend/static:/static  # For static files
+      - ./backend/media:/media  # For media files
     ports:
       - "8000:8000"
 
-
-nginx:
+  frontend:
     build:
-      context: ./nginx
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: react-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-server
     ports:
       - "80:80"
-      - "443:443"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./frontend/dist:/usr/share/nginx/html  # React build output
+      - ./backend/static:/static  # Static files served by Nginx
+      - ./backend/media:/media  # Media files served by Nginx
     depends_on:
-      - imod-front
-      - imod_api
+      - backend
+      - frontend

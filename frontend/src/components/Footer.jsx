@@ -22,8 +22,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="w-full md:w-1/3 text-center">
-          <h2 className="text-xl font-semibold">{t("imod")}</h2>
+        <div className="w-full md:w-1/3 text-center -mt-8">
           <ul className="mt-4 space-y-2">
             <li>
               <Link to="/" className="text-gray-400 hover:text-white transition-colors">
@@ -45,13 +44,9 @@ const Footer = () => {
                 {t('vacancies')}
               </Link>
             </li>
-          </ul>
-        </div>
-
-        {/* Social Media Links */}
-        <div className="w-full md:w-1/3 text-center md:text-right">
-          <h2 className="text-xl font-semibold">{t("subscribe_to_us")}</h2>
-          <div className="mt-4 flex justify-center md:justify-end space-x-4">
+            <li className="text-gray-400 hover:text-white transition-colors">
+            
+          <div className="mt-4 flex justify-center space-x-4">
             <a
               href="https://www.facebook.com/imod.tj/"
               target="_blank"
@@ -84,8 +79,14 @@ const Footer = () => {
             >
               <i className="fab fa-linkedin-in"></i>
             </a> */}
-          </div>
         </div>
+            </li>
+          </ul>
+          
+        </div>
+
+        {/* Social Media Links */}
+        
       </div>
 
       <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-500">

@@ -59,7 +59,7 @@ const Header = ({handleChangeLanguage, language}) => {
             <Link to="/" className="flex">
               <img className="h-12 ml-8" src={logo} alt="ТГЕМ лого" />
             </Link>
-            <div className="hidden lg:flex space-x-10">
+            <div className="hidden lg:flex space-x-10 mx-4">
               <div className="flex flex-col">
                 <span className="font-semibold text-gray-700">{t('phone')}</span>
                 <a href="tel:+992411005555" className="text-blue-600 hover:underline">
@@ -78,9 +78,7 @@ const Header = ({handleChangeLanguage, language}) => {
               </div>
              
             </div>
-            <div>
-             
-                </div>
+            
           </div>
         </div>
       )}

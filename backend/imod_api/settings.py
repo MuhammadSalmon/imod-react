@@ -28,7 +28,7 @@ SECRET_KEY = getenv(
     'django-insecure--5p^n^xfp!rvrk@dt*=bmk*r&pep4bkx)!^iae)8a&x)iqy)6d')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("DJANGO_DEBUG", "0") == "1"
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '[::1]',] + os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
 
@@ -150,7 +150,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import os
 from corsheaders.defaults import default_headers
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = "/media/"
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -204,4 +204,4 @@ STATICFILES_DIRS = [
 ]
 
 # Directory where collected static files will be stored
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = "/static/"
