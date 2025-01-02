@@ -44,7 +44,7 @@ const ImageSlider = ({ id }) => {
           <div className="numbertext">
             {index + 1} / {images.length}
           </div>
-          <img src={image.src} alt={image.alt} style={{ width: '100%' }} />
+          <img src={image.src} alt={image.alt} style={{ width: '100%', height: "50vh" }} />
         </div>
       ))}
 
@@ -68,7 +68,7 @@ const ImageSlider = ({ id }) => {
             <img
               className={`demo cursor ${slideIndex === index + 1 ? 'active' : ''}`}
               src={image.thumbnailSrc || image.src}
-              style={{ width: '100%' }}
+              style={{ width: '100%', height: "15vh" } }
               onClick={() => currentSlide(index + 1)}
               alt={image.alt}
             />
