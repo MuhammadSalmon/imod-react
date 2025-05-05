@@ -15,7 +15,6 @@ const ImageSlider = ({ id }) => {
     { src: product.images[1]?.image, thumbnailSrc: product.images[1].image, alt: product.name },
     { src: product.images[2]?.image, thumbnailSrc: product.images[2].image, alt: product.name },
     { src: product.images[3]?.image, thumbnailSrc: product.images[3].image, alt: product.name },
-    
   ]
   const showSlides = (n) => {
     let newIndex = slideIndex + n;
